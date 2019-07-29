@@ -1,4 +1,4 @@
-Wolcome to Composer Service SDK V1 Client Sample code 
+Composer Service SDK V1 Client Sample JAVA code 
 --------------------------------------------------------
 
 The sample code demonstrate how to produce VDP samples and full PDF VDP processing.
@@ -48,7 +48,7 @@ proxyHost - if useProxy is true, then this value is a must - should contain the 
 proxyPort - if useProxy is true, then this value is a must - should contain the proxy port number
 
 For example:
-target>java -jar composer-sdk-sample-code-1.0.jar ui4h5o2uih45ouh2o3u45h3ouih45o3u 23j4i234h5io2u34h5o23u5ho3u4h5o2 true my.proxy.com 8080
+target>java -jar composer-sdk-sample-code-1.0.jar bu6h532uih45auh2o5u62h3noh45a4u b2j4i234h5ao2t33h5o52u5ho1un25o4 true my.proxy.com 8080
 
 Folders Structure
 ======================================
