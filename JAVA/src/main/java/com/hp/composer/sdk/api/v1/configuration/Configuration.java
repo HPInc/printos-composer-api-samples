@@ -15,9 +15,7 @@ public class Configuration {
 	public static String xHpHmacDate = "x-hp-hmac-date";
 	public static String xHpHmacAlgorithm = "x-hp-hmac-algorithm";
 
-	//Enter your PrintOS Composer Key here...
 	public static String hmacKey;
-	//Enter your PrintOS Composer Secret here...
 	public static String hmacSecret;
 	public static String hmacAlgorithm = "SHA1";
 	public static String javaxCryptoName = "HmacSHA1";
