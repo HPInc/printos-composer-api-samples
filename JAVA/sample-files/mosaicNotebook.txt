@@ -1,0 +1,25 @@
+Code	Greeting
+2	Noam draw a Flower!
+3	Tamar sculptured a vase!
+4	Adi draw the Rainbow!
+5	Eran built a chair!
+6	Sarah draw the world!
+7	Noam draw a Flower!
+8	Tamar sculptured a vase!
+9	Adi draw the Rainbow!
+10	Eran built a chair!
+11	Sarah draw the world!
+12	Noam draw a Flower!
+13	Tamar sculptured a vase!
+14	Adi draw the Rainbow!
+15	Eran built a chair!
+16	Sarah draw the world!
+17	Noam draw a Flower!
+18	Tamar sculptured a vase!
+19	Adi draw the Rainbow!
+20	Eran built a chair!
+21	Sarah draw the world!
+22	Noam draw a Flower!
+23	Tamar sculptured a vase!
+24	Adi draw the Rainbow!
+25	Eran built a chair!

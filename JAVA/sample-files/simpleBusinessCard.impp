@@ -1,0 +1,27 @@
+<?xml version="1.0"?><PPML xmlns:xsl="http://www.w3.org/2000/svg" description="Press Type: Sheet | Layout Type: 1 up | Duplex | Media Size: 330.2x482.6  mm | Document Dimensions: 80x50  mm | Rotate by 90&amp;deg;: No | Step and Repeat: 5x6 | Gaps: 0x0  mm  " Creator="HP SmartStream Composer 2.0">
+  
+  <REUSABLE_OBJECT><OBJECT Position="0 0"><SOURCE Format="text/xml" Dimensions="1.00000 14.17323"><INTERNAL_DATA><svg xmlns="http://www.w3.org/2000/svg" width="1.00000" id="svg-root" height="14.17323"><rect x="0" width="1.00000" y="0" id="CropMarkRect" height="14.17323"><xsl:comment>HPIndigoRemark Color="Black"</xsl:comment></rect></svg></INTERNAL_DATA></SOURCE></OBJECT><OCCURRENCE_LIST><OCCURRENCE Scope="Global" Environment="HP~Designer" Name="PressCropMarkSigHor_0_14_Black"><VIEW><TRANSFORM Matrix="0.00000 1.00000 -1.00000 0.00000 0.00000 0.00000"></TRANSFORM></VIEW></OCCURRENCE><OCCURRENCE Scope="Global" Environment="HP~Designer" Name="PressCropMarkSigVer_0_14_Black"><VIEW><TRANSFORM Matrix="1.00000 0.00000 0.00000 1.00000 0.00000 0.00000"></TRANSFORM></VIEW></OCCURRENCE></OCCURRENCE_LIST></REUSABLE_OBJECT><PRINT_LAYOUT Ncopies="1" Collate="Job">
+    <PAGE_LAYOUT BleedBox="0.00000 0.00000 $pageWidth+0.00000 $pageHeight+0.00000" TrimBox="0.0 0.0 226.7716535433071 141.73228346456693"></PAGE_LAYOUT>
+    <SHEET_LAYOUT GangDocuments="No" Hsize="841.8897637795276" Vsize="595.2755905511812">
+      <xsl:comment> HPIndigoRemark Margins="0.0 0.0 0.0 0.0" </xsl:comment>
+      <PAGE_LAYOUT BleedBox="0.00000 0.00000 $pageWidth+0.00000 $pageHeight+0.00000" TrimBox="0.0 0.0 226.7716535433071 141.73228346456693"></PAGE_LAYOUT>
+      <IMPOSITION Position="20.12598 94.3937" Rotation="0" Name="1 up">
+        <xsl:comment>HPIndigoRemark Alignment="CenterCenterAlign"</xsl:comment><xsl:comment> HPIndigoRemark Alignment="CenterCenterAlign" </xsl:comment>
+        <xsl:comment> HPIndigoRemark PositionCorner="TopLeft" Position="20.12598 94.3937" </xsl:comment>
+        <xsl:comment> HPIndigoRemark MultiDistribution="Restart" </xsl:comment>
+        <xsl:comment> HPIndigoRemark RepeatData="Records"</xsl:comment>
+          
+            <REPEAT Order="Ascending" Action="Increment" SpacingMethod="Gap" Spacing="0.0" Count="3" Direction="Ver"><REPEAT Order="Ascending" Action="Increment" SpacingMethod="Gap" Spacing="0.0" Count="3" Direction="Hor"><REPEAT Order="Ascending" Action="Increment" SpacingMethod="Gap" Spacing="0.0" Count="1" Direction="Stack">
+              <SIGNATURE PageCount="2" Nrows="1" Ncols="1">
+                <CELL Col="1" PageOrder="2*s-1" Row="1" Face="Up" Rotation="0"></CELL>
+                <CELL Col="1" PageOrder="2*s" Row="1" Face="Dn" Rotation="0"></CELL>
+                
+                
+              <HOR_TRIM_MARKS MarkDist="8.50394" AllowOnPage="No" Face="Both"><xsl:comment>HPIndigoRemark LocateAround="Repeat"</xsl:comment><OCCURRENCE_REF Ref="PressCropMarkSigHor_0_14_Black" Environment="HP~Designer"></OCCURRENCE_REF></HOR_TRIM_MARKS><VER_TRIM_MARKS MarkDist="8.50394" AllowOnPage="No" Face="Both"><xsl:comment>HPIndigoRemark LocateAround="Repeat"</xsl:comment><OCCURRENCE_REF Ref="PressCropMarkSigVer_0_14_Black" Environment="HP~Designer"></OCCURRENCE_REF></VER_TRIM_MARKS></SIGNATURE>
+            </REPEAT>
+          </REPEAT>
+        </REPEAT>
+      </IMPOSITION>
+    </SHEET_LAYOUT>
+  </PRINT_LAYOUT>
+</PPML>
