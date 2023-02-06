@@ -1,9 +1,11 @@
-//Copyright 2019 HP Inc.
 package com.hp.composer.sdk.api.v1.resources.common;
 
 import com.hp.composer.sdk.api.v1.helpers.CollectionToString;
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+
 import java.util.List;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ResourceIdCollection extends CollectionToString<String> {
 	public ResourceIdCollection(){}
 

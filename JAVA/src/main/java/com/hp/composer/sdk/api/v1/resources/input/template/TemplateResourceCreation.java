@@ -1,6 +1,8 @@
-//Copyright 2019 HP Inc.
 package com.hp.composer.sdk.api.v1.resources.input.template;
 
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class TemplateResourceCreation {
 	public TemplateResourceCreation(){}
 

@@ -1,9 +1,8 @@
-//Copyright 2019 HP Inc.
 package com.hp.composer.sdk.api.v1.examples;
 
 import com.hp.composer.sdk.api.v1.resources.common.ResourceIdCollection;
 import com.hp.composer.sdk.api.v1.resources.output.pdf.Range;
-import com.hp.composer.sdk.api.v1.resources.output.sample.PdfResourceCreation;
+import com.hp.composer.sdk.api.v1.resources.output.pdf.PdfResourceCreation;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,13 +12,17 @@ public class PdfOutput {
 					 Boolean applyImposition,
 					 Integer recordsRangeFrom,
 					 Integer recordsRangeTo,
-					 Integer skipRecords){
+					 Integer skipRecords,
+					 Integer numberOfChunkedProcessing,
+					 String chunkedProcessingMergeFormat){
 
 		this.fileName = fileName;
 		this.applyImposition = applyImposition;
 		this.recordsRangeFrom = recordsRangeFrom;
 		this.recordsRangeTo = recordsRangeTo;
 		this.skipRecords = skipRecords;
+		this.numberOfChunkedProcessing = numberOfChunkedProcessing;
+		this.chunkedProcessingMergeFormat = chunkedProcessingMergeFormat;
 	}
 
 	public String fileName;
@@ -27,6 +30,8 @@ public class PdfOutput {
 	public Integer recordsRangeFrom;
 	public Integer recordsRangeTo;
 	public Integer skipRecords;
+	public Integer numberOfChunkedProcessing;
+	public String chunkedProcessingMergeFormat;
 
 
 	public PdfResourceCreation toPdfResourceCreation(String templateResourceId, String dataResourceId, String impositionTemplateResourceId, String assetsLibraryResourceId){
@@ -36,6 +41,9 @@ public class PdfOutput {
 		pdfResourceCreation.setDataResourceId(dataResourceId);
 		pdfResourceCreation.setImpositionTemplateResourceId(impositionTemplateResourceId);
 		pdfResourceCreation.setApplyImposition(applyImposition);
+		pdfResourceCreation.setNumberOfChunkedProcessing(numberOfChunkedProcessing);
+		pdfResourceCreation.setChunkedProcessingMergeFormat(chunkedProcessingMergeFormat);
+
 		if(recordsRangeFrom != null && recordsRangeTo != null){
 			Range range = new Range();
 			range.setFrom(recordsRangeFrom);

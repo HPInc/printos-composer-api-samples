@@ -1,8 +1,10 @@
-//Copyright 2019 HP Inc.
 package com.hp.composer.sdk.api.v1.resources.input.assetsLibrary;
+
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
 import java.util.List;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Output {
 	public Output(){}
 

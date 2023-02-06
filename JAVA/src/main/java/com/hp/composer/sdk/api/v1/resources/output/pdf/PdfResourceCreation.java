@@ -1,13 +1,12 @@
 package com.hp.composer.sdk.api.v1.resources.output.pdf;
 
 import com.hp.composer.sdk.api.v1.resources.common.ResourceIdCollection;
+import com.hp.composer.sdk.api.v1.resources.output.pdf.Range;
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class PdfResource {
-	public PdfResource(){}
-
-	private Output output;
+public class PdfResourceCreation {
+	public PdfResourceCreation(){}
 
 	private String fileName;
 	private String templateResourceId;
@@ -16,10 +15,12 @@ public class PdfResource {
 	private ResourceIdCollection assetsLibraryResourceIdCollection;
 	private Boolean applyImposition;
 	private Range recordsRange;
-	private Integer skipRecords;
+
 	private Long clientTimestampInMilliseconds;
+	private Integer skipRecords;
 	private Integer numberOfChunkedProcessing;
 	private String chunkedProcessingMergeFormat;
+
 
 	public String getChunkedProcessingMergeFormat() {
 		return chunkedProcessingMergeFormat;
@@ -28,7 +29,6 @@ public class PdfResource {
 	public void setChunkedProcessingMergeFormat(String chunkedProcessingMergeFormat) {
 		this.chunkedProcessingMergeFormat = chunkedProcessingMergeFormat;
 	}
-
 
 	public Integer getNumberOfChunkedProcessing() {
 		return numberOfChunkedProcessing;
@@ -39,12 +39,12 @@ public class PdfResource {
 	}
 
 
-	public Output getOutput() {
-		return output;
+	public Long getClientTimestampInMilliseconds() {
+		return clientTimestampInMilliseconds;
 	}
 
-	public void setOutput(Output output) {
-		this.output = output;
+	public void setClientTimestampInMilliseconds(Long clientTimestampInMilliseconds) {
+		this.clientTimestampInMilliseconds = clientTimestampInMilliseconds;
 	}
 
 	public Integer getSkipRecords() {
@@ -55,14 +55,14 @@ public class PdfResource {
 		this.skipRecords = skipRecords;
 	}
 
-	public Long getClientTimestampInMilliseconds() {
-		return clientTimestampInMilliseconds;
+
+	public String getFileName() {
+		return fileName;
 	}
 
-	public void setClientTimestampInMilliseconds(Long clientTimestampInMilliseconds) {
-		this.clientTimestampInMilliseconds = clientTimestampInMilliseconds;
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
 	}
-
 
 	public String getTemplateResourceId() {
 		return templateResourceId;
@@ -112,26 +112,10 @@ public class PdfResource {
 		this.recordsRange = recordsRange;
 	}
 
-
-
-
-
-	public String getFileName() {
-		return fileName;
-	}
-
-	public void setFileName(String fileName) {
-		this.fileName = fileName;
-	}
-
-
 	@Override
 	public String toString(){
 		StringBuilder stringBuilder = new StringBuilder();
-		stringBuilder.append("PdfResource:{");
-
-		stringBuilder.append("output:").append(output).append(", ");
-
+		stringBuilder.append("PdfResourceCreation:{");
 		stringBuilder.append("fileName:").append(fileName).append(", ");
 		stringBuilder.append("templateResourceId:").append(templateResourceId).append(", ");
 		stringBuilder.append("dataResourceId:").append(dataResourceId).append(", ");
@@ -139,13 +123,10 @@ public class PdfResource {
 		stringBuilder.append("assetsLibraryResourceIdCollection:").append(assetsLibraryResourceIdCollection).append(", ");
 		stringBuilder.append("applyImposition:").append(applyImposition).append(", ");
 		stringBuilder.append("recordsRange:").append(recordsRange).append(", ");
-		stringBuilder.append("skipRecords:").append(skipRecords).append(", ");
 		stringBuilder.append("clientTimestampInMilliseconds:").append(clientTimestampInMilliseconds).append(", ");
+		stringBuilder.append("skipRecords:").append(skipRecords).append(", ");
 		stringBuilder.append("numberOfChunkedProcessing:").append(numberOfChunkedProcessing).append(", ");
 		stringBuilder.append("chunkedProcessingMergeFormat:").append(chunkedProcessingMergeFormat).append(", ");
-
-
-
 		stringBuilder.append("}");
 
 		return stringBuilder.toString();

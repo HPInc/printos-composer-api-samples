@@ -9,6 +9,7 @@ public class Configuration {
 	public static int proxyPort;
 
 	public static String apiBaseUrl = "https://printos.api.hp.com/composer-service";
+
 	public static String xHpHmacAuthentication = "x-hp-hmac-authentication";
 	public static String xHpHmacDate = "x-hp-hmac-date";
 	public static String xHpHmacAlgorithm = "x-hp-hmac-algorithm";

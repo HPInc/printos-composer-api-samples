@@ -1,4 +1,3 @@
-//Copyright 2019 HP Inc.
 package com.hp.composer.sdk.api.v1;
 
 import com.hp.composer.sdk.api.v1.assetUploader.AssetUploader;
@@ -17,6 +16,7 @@ import com.hp.composer.sdk.api.v1.resources.input.impositionTemplate.ImpositionT
 import com.hp.composer.sdk.api.v1.resources.input.template.TemplateResource;
 import com.hp.composer.sdk.api.v1.resources.input.template.TemplateResourceCreation;
 import com.hp.composer.sdk.api.v1.resources.output.pdf.PdfResource;
+import com.hp.composer.sdk.api.v1.resources.output.pdf.PdfResourceCreation;
 import com.hp.composer.sdk.api.v1.resources.output.sample.*;
 import com.hp.composer.sdk.api.v1.examples.*;
 
@@ -71,10 +71,12 @@ public class SampleCodeRunner {
 								true, // whether to apply imposition or not
 								5, // optional - use only part of the records - range start from record 5.
 								10, // optional - use only part of the records - range ends at record 10.
-								1 // skip the first record of the input data as it is just header with field names.
+								1, // skip the first record of the input data as it is just header with field names.
+								null,
+								null
 						),
 						true, // whether to demonstrate touch api in this example
-						false // should delete resources at the end
+						true // should delete resources at the end
 				)
 		);
 
@@ -85,7 +87,7 @@ public class SampleCodeRunner {
 						// NOTE - In this example we do not upload imposition template file nor use Imposition template Resource.
 						// This example contain imposition embedded inside the template - an option available at SmartStream Designer for InDesign when packing a template.
 
-						true,  // should run this sample?
+						false,  // should run this sample?
 						new VdpTemplate(
 								"mosaicNotebook.hpd" // the name of the VDP Template input file
 						),
@@ -111,7 +113,9 @@ public class SampleCodeRunner {
 								true, // whether to apply imposition or not
 								null, // optional - use only part of the records - in this case we wish to make full PDF with entire set of records supplied by the data file, therefore set as null.
 								null, // optional - use only part of the records- in this case we wish to make full PDF with entire set of records supplied by the data file, therefore set as null.
-								1  // skip the first record of the input data as it is just header with field names.
+								1,  // skip the first record of the input data as it is just header with field names.
+								null,
+								null
 						),
 						true, // whether to demonstrate touch api in this example
 						false // should delete resources at the end
@@ -149,10 +153,99 @@ public class SampleCodeRunner {
 								false, // whether to apply imposition or not
 								null, // optional - use only part of the records - range start from record 5.
 								null, // optional - use only part of the records - range ends at record 10.
-								1 // skip the first record of the input data as it is just header with field names.
+								1, // skip the first record of the input data as it is just header with field names.
+								null,
+								null
 						),
 						true, // whether to demonstrate touch api in this example
 						false // should delete resources at the end
+				)
+		);
+
+		// example 4
+		examples.addExample("6pages - processing using multiple chunks - output single merged PDF output",
+				new Example(
+						false, // should run this sample?
+						new VdpTemplate(
+								"6pages.hpd" // the name of the VDP Template input file
+						),
+						new Data(
+								"6pages.txt", // the name of the Data input files with records inside.
+								9 // the data file delimiter format in Ascii - in this case comma delimiter
+						),
+						null,
+						null, // no assets library in this example
+						null,
+
+						new PdfOutput(
+								"6pages.pdf", // name for PDF file to get as output
+								true, // whether to apply imposition or not
+								null, // optional - use only part of the records - range start from record 5.
+								null, // optional - use only part of the records - range ends at record 10.
+								1, // skip the first record of the input data as it is just header with field names.
+								3,
+								"PDF"
+						),
+						true, // whether to demonstrate touch api in this example
+						true // should delete resources at the end
+				)
+		);
+
+		// example 5
+		examples.addExample("6pages - processing using multiple chunks - packing all inside one ZIP file",
+				new Example(
+						true, // should run this sample?
+						new VdpTemplate(
+								"6pages.hpd" // the name of the VDP Template input file
+						),
+						new Data(
+								"6pages.txt", // the name of the Data input files with records inside.
+								9 // the data file delimiter format in Ascii - in this case comma delimiter
+						),
+						null,
+						null, // no assets library in this example
+						null,
+
+						new PdfOutput(
+								"6pages.zip", // name for PDF file to get as output
+								true, // whether to apply imposition or not
+								null, // optional - use only part of the records - range start from record 5.
+								null, // optional - use only part of the records - range ends at record 10.
+								1, // skip the first record of the input data as it is just header with field names.
+								3,
+								"ZIP"
+						),
+						true, // whether to demonstrate touch api in this example
+						true // should delete resources at the end
+				)
+		);
+
+
+		// example 6
+		examples.addExample("Fonts warnings - ZIP output",
+				new Example(
+						true,
+						new VdpTemplate(
+								"Fonts warnings.hpd" // the name of the VDP Template input file
+						),
+						new Data(
+								"Fonts warnings.txt", // the name of the Data input files with records inside.
+								9 // the data file delimiter format in Ascii - in this case comma delimiter
+						),
+						null,
+						null, // no assets library in this example
+						null,
+						new PdfOutput(
+								"Fonts warnings.pdf", // name for PDF file to get as output
+								true, // whether to apply imposition or not
+								null, // optional - use only part of the records - range start from record 5.
+								null, // optional - use only part of the records - range ends at record 10.
+								1, // skip the first record of the input data as it is just header with field names.
+								2,
+								"PDF"
+						),
+						true, // whether to demonstrate touch api in this example
+						true // should delete resources at the end
 				)
 		);
 
@@ -381,7 +474,7 @@ public class SampleCodeRunner {
 			//=================================================================================================
 			String pdfResourceId = null;
 			if(example.pdfOutput != null) {
-				System.out.println("Create full PDF output Resource, and wait for it to turn to ready state...");
+				System.out.println("Create PDF output Resource, and wait for it to turn to ready state...");
 				System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
 
 				System.out.println("Create PDF Resource");

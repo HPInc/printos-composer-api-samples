@@ -1,8 +1,10 @@
-//Copyright 2019 HP Inc.
 package com.hp.composer.sdk.api.v1.resources.output.pdf;
+
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
 import java.util.List;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Output {
 	public Output(){}
 
@@ -19,6 +21,26 @@ public class Output {
 	private Long startProcessingTime;
 	private Long endProcessingTime;
 	private Long resourceCreationTime;
+	private Integer progress;
+	private String warningCsvReportUrl;
+
+	public String getWarningCsvReportUrl() {
+		return warningCsvReportUrl;
+	}
+
+	public void setWarningCsvReportUrl(String warningCsvReportUrl) {
+		this.warningCsvReportUrl = warningCsvReportUrl;
+	}
+
+
+	public Integer getProgress() {
+		return progress;
+	}
+
+	public void setProgress(Integer progress) {
+		this.progress = progress;
+	}
+
 
 	public Long getResourceCreationTime() {
 		return resourceCreationTime;
@@ -134,6 +156,8 @@ public class Output {
 		stringBuilder.append("startProcessingTime:").append(startProcessingTime).append(", ");
 		stringBuilder.append("endProcessingTime:").append(endProcessingTime).append(", ");
 		stringBuilder.append("resourceCreationTime:").append(resourceCreationTime).append(", ");
+		stringBuilder.append("progress:").append(progress).append(", ");
+		stringBuilder.append("warningCsvReportUrl:").append(warningCsvReportUrl).append(", ");
 
 		stringBuilder.append("warningMessages:");
 		if (warningMessages == null) {

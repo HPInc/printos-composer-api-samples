@@ -1,8 +1,10 @@
-//Copyright 2019 HP Inc.
 package com.hp.composer.sdk.api.v1.resources.common;
+
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
 import java.io.Serializable;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class SmsError implements Serializable {
 	public SmsError(){}
 
